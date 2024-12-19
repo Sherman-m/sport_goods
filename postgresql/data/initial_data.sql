@@ -1,4 +1,5 @@
-INSERT INTO hello_schema.users(name, count)
-VALUES ('user-from-initial_data.sql', 42)
+INSERT INTO sport_goods.categories (name)
+VALUES ('basketball'),
+       ('football')
 ON CONFLICT (name)
 DO NOTHING;
