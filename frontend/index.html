@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <h1 class="header__logo">Sport<span class="header__logo-highlight">ix</span></h1>
+            <nav class="header__menu">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#home">Начало</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#goods">Каталог</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#buying">Оформление заказа</a>
+                    </li>
+                </ul>
+            </nav>
+            <h1 class="header__logo"></h1>
+        </div>
+    </div>
+</header>
+
+<main class="main">
+    <section id="home" class="intro">
+        <div class="container">
+            <div class="intro__inner">
+                <div class="intro__content">
+                    <div class="intro__logo-container">
+                        <h2 class="intro__logo title">Интернет-магазин товаров для спорта</h2>
+                    </div>
+                    <p class="intro__text text text--color-gray">
+                        Компания Sportix является лидером рынка продажи
+                        спорт-товаров.
+                        Широкий ассортимент от мировых производителей
+                        Постоянное обновление ассортимента
+                        Прямые поставки от производителя
+                    </p>
+                    <button class="intro__button button button--color-gray">Перейти к покупкам!</button>
+                </div>
+                <div class="intro__image-container">
+                    <img
+                            class="intro__image"
+                            src="assets/icons/sport-goods.svg"
+                            alt=""
+                            width="600" height="600"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="goods" class="skills">
+        <div class="container">
+            <h2 class="skills__logo title">Каталог</h2>
+            <div class="skills__inner">
+                <div class="skills__content">
+                    <div class="skills__content-item skills__content-item-writing">
+                        <div class="writing__image-container">
+                            <img
+                                    class="writing__image"
+                                    src=assets/icons/writing.svg
+                                    alt=""
+                                    width="293" height="293"
+                            >
+                        </div>
+                        <h2 class="writing__logo title--mini">Товар 1</h2>
+                        <p class="writing__text text text--color-gray">
+                            Описание товара 1
+                        </p>
+                        <button class="skills__button-writing button button--color-gray">Заказать</button>
+                    </div>
+
+                    <div class="skills__content-item skills__content-item-reading">
+                        <div class="reading__image-container">
+                            <img
+                                    class="reading__image"
+                                    src=assets/icons/writing.svg
+                                    alt=""
+                                    width="371" height="247"
+                            >
+                        </div>
+                        <h2 class="reading__logo title--mini">Товар 2</h2>
+                        <p class="reading__text text text--color-gray">
+                            Описание товара 2
+                        </p>
+                        <button class="skills__button-reading button button--color-gray">Заказать</button>
+                    </div>
+                    <div class="skills__content-item skills__content-item-reading">
+                        <div class="reading__image-container">
+                            <img
+                                    class="reading__image"
+                                    src=assets/icons/writing.svg
+                                    alt=""
+                                    width="371" height="247"
+                            >
+                        </div>
+                        <h2 class="reading__logo title--mini">Товар 3</h2>
+                        <p class="reading__text text text--color-gray">
+                            Описание товара 3
+                        </p>
+                        <button class="skills__button-reading button button--color-gray">Заказать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="buying" class="contacts">
+        <h2 class="skills__logo title">Оформление заказа</h2>
+        <div class="container">
+            <div class="contacts__inner">
+                <div class="contacts__image-container">
+                    <img
+                            class="contacts__image"
+                            src="assets/icons/contact-us.svg"
+                            alt=""
+                            width="477" height="429"
+
+                    >
+                </div>
+                <div class="contacts__content">
+                    <p class="contacts__text text text--color-gray">
+                        Заполните все данные и наш менеджер свяжется с Вами для подтверждения заказа
+                    </p>
+                    <form class="contacts__form">
+                        <label class="contacts__hint" for="order"></label>
+                        <input class="contacts__input" id="order" type="text" placeholder="Ваш заказ">
+
+                        <label class="contacts__hint" for="name"></label>
+                        <input class="contacts__input" id="name" type="text" placeholder="Ваше имя">
+
+                        <label class="contacts__hint" for="number"></label>
+                        <input class="contacts__input" id="number" type="text" placeholder="Ваш телефон">
+
+                        <button class="contacts__button button--color-gray">Оформить заказ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__wrapper">
+            <h1 class="footer__logo">Sport<span class="footer__logo-highlight">ix</span></h1>
+            <nav>
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">Все права защищены</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
