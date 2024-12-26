@@ -50,10 +50,10 @@ components_manager:
             throttling_enabled: false
             url_trailing_slash: strict-match
 
-        handler-v1-customers-v1-login-post:
-            path: /v1/customers/v1/login
-            method: PATH
-            task_processor: main_task_processor
+        handler-v1-orders-post:
+            path: /v1/orders/
+            method: POST
+            task_processor: main-task-processor
 
         postgres-db-1:
             dbconnection: $dbconnection
