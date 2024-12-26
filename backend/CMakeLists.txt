@@ -27,7 +27,7 @@ userver_setup_environment()
 # Common sources
 file (GLOB_RECURSE SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/views/*.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/views/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/views/*.hpp
 )
 add_library(${PROJECT_NAME}_objs OBJECT ${SOURCES})
 
