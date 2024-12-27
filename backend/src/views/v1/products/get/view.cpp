@@ -18,7 +18,8 @@ struct Product {
   std::string name;
   std::string description;
   std::string category_name;
-  userver::decimal64::Decimal<10> price;
+  std::string image_url;
+  userver::decimal64::Decimal<2> price;
 };
 
 userver::formats::json::Value Serialize(
@@ -28,6 +29,7 @@ userver::formats::json::Value Serialize(
   item["name"] = product.name;
   item["description"] = product.description;
   item["category_name"] = product.category_name;
+  item["image_url"] = product.image_url;
   item["price"] = product.price;
 
   return item.ExtractValue();
@@ -62,7 +64,7 @@ class View final : public userver::server::handlers::HttpHandlerBase {
 
  private:
   const userver::storages::postgres::Query kSelectProducts{
-      "SELECT p.name, p.description, c.name, p.price "
+      "SELECT p.name, p.description, c.name, p.image_url, p.price "
       "FROM sport_goods.products AS p "
       "JOIN sport_goods.categories AS c ON p.category_id = c.id; ",
       userver::storages::postgres::Query::Name("select-products")};

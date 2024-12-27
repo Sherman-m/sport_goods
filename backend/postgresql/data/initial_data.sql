@@ -9,13 +9,13 @@ CREATE TEMP TABLE IF NOT EXISTS all_goods (
   name TEXT NOT NULL,
   description TEXT,
   category_name TEXT NOT NULL,
-  image_link TEXT NOT NULL,
+  image_url TEXT NOT NULL,
   price DECIMAL(10, 2) NOT NULL,
   quantity INTEGER NOT NULL,
   UNIQUE(name, category_name)
 );
 
-INSERT INTO all_goods (name, description, category_name, image_link, price, quantity) 
+INSERT INTO all_goods (name, description, category_name, image_url, price, quantity) 
 VALUES ('Кроссовки утепленные женские Kappa Giusto Mid', 'Да, это нормально, что ты не готова к наступающим морозам. Главное, что Kappa Giusto готовы. Благодаря этим кроссовкам и твое настроение, и твой стиль будут в полном порядке всю зиму.', 'common', 'https://cdn.sportmaster.ru/upload/mdm/media_content/resize/1bb/1008_800_b811/130314190299.jpg', 7139 , 100),
        ('Кеды женские Termit Azalea Mid 2', 'Утепленные женские кеды Termit Azalea Mid 2 отлично подходят для прогулок, если на улице стало прохладно.', 'common', 'https://cdn.sportmaster.ru/upload/mdm/media_content/resize/7b3/1008_800_b283/87912690299.jpg', 4949, 100),
        ('Сапоги утепленные женские Termit Storm Boot WTR', 'Стильные зимние сапоги от Termit для тех, кто не впадает в спячку, а продолжает активно проводить время в холодные дни.', 'common', 'https://cdn.sportmaster.ru/upload/mdm/media_content/resize/04c/1008_800_93fc/139451340299.jpg', 8799, 100),
@@ -34,8 +34,8 @@ VALUES ('Кроссовки утепленные женские Kappa Giusto Mid
 ON CONFLICT (name, category_name)
 DO NOTHING;
 
-INSERT INTO sport_goods.products (name, description, category_id, image_link, price, quantity)
-SELECT ag.name, ag.description, c.id, ag.image_link, ag.price, ag.quantity FROM all_goods AS ag
+INSERT INTO sport_goods.products (name, description, category_id, image_url, price, quantity)
+SELECT ag.name, ag.description, c.id, ag.image_url, ag.price, ag.quantity FROM all_goods AS ag
 JOIN sport_goods.categories AS c ON c.name = ag.category_name 
 ON CONFLICT (name)
 DO NOTHING;
