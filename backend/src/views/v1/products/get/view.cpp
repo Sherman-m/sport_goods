@@ -18,7 +18,7 @@ struct Product {
   std::string name;
   std::string description;
   std::string category_name;
-  userver::decimal64::Decimal<2> price;
+  userver::decimal64::Decimal<10> price;
 };
 
 userver::formats::json::Value Serialize(
