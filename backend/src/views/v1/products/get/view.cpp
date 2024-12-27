@@ -5,7 +5,9 @@
 #include <userver/decimal64/decimal64.hpp>
 #include <userver/formats/json.hpp>
 #include <userver/formats/serialize/common_containers.hpp>
+#include <userver/http/content_type.hpp>
 #include <userver/server/handlers/http_handler_base.hpp>
+#include <userver/server/http/http_response.hpp>
 #include <userver/storages/postgres/cluster.hpp>
 #include <userver/storages/postgres/component.hpp>
 
@@ -44,15 +46,18 @@ class View final : public userver::server::handlers::HttpHandlerBase {
                 .GetCluster()) {}
 
   std::string HandleRequestThrow(
-      const userver::server::http::HttpRequest&,
+      const userver::server::http::HttpRequest& request,
       userver::server::request::RequestContext&) const override {
     auto result = pg_cluster_->Execute(
         userver::storages::postgres::ClusterHostType::kSlave, kSelectProducts);
 
-    userver::formats::json::ValueBuilder response;
-    response["items"] = result.AsContainer<std::vector<Product>>(
+    userver::formats::json::ValueBuilder response_body;
+    response_body["items"] = result.AsContainer<std::vector<Product>>(
         userver::storages::postgres::kRowTag);
-    return userver::formats::json::ToString(response.ExtractValue());
+
+    auto& response = request.GetHttpResponse();
+    response.SetContentType(userver::http::content_type::kApplicationJson);
+    return userver::formats::json::ToString(response_body.ExtractValue());
   }
 
  private:
