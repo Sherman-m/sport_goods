@@ -2,7 +2,7 @@
 
 #include <userver/components/component_list.hpp>
 
-namespace sport_goods::v1::products::get {
+namespace sport_goods::views::v1::products::get {
 
-void View(userver::components::ComponentList& component_list);
+void AppendView(userver::components::ComponentList& component_list);
 }
