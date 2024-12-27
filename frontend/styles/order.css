@@ -1,11 +1,18 @@
-.contacts {
+.orders {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 124px 133px 112px;
 }
 
-.contacts__inner {
+.orders__logo {
+    margin: 103px 0 96px 0;
+    text-align: center;
+    font-size: 48px;
+    line-height: 80px;
+}
+
+.orders__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,37 +20,32 @@
     margin: 0 auto;
 }
 
-.contacts__image-container {
+.orders__image-container {
     max-width: 50%;
     display: flex;
     justify-content: center;
 }
 
-.contacts__content {
+.orders__content {
     max-width: 776px;
     margin-left: 50px;
 }
 
-.contacts__logo {
-    font-size: 48px;
-    font-weight: 600;
-    line-height: 80px;
-    margin-bottom: 20px;
-}
-
-.contacts__text {
+.orders__text {
     font-size: 18px;
     line-height: 30px;
     margin-bottom: 40px;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
-.contacts__form {
+.orders__form-inputs {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 12px;
 }
 
-.contacts__input {
+.orders__input {
     padding: 26px 0 30px 33px;
     width: 450px;
     height: 80px;
@@ -54,8 +56,8 @@
     line-height: 24px;
 }
 
-.contacts__button {
-    width: 264px;
+.orders__button {
+    width: 450px;
     height: 80px;
     border-radius: 10px;
     font-weight: 500;

@@ -15,13 +15,13 @@
             <nav class="header__menu">
                 <ul class="header__menu-list">
                     <li class="header__menu-item">
-                        <a class="header__menu-link" href="#home">Начало</a>
+                        <a class="header__menu-link" href="#" data-link="home">Начало</a>
                     </li>
                     <li class="header__menu-item">
-                        <a class="header__menu-link" href="#goods">Каталог</a>
+                        <a class="header__menu-link" href="#" data-link="goods">Каталог</a>
                     </li>
                     <li class="header__menu-item">
-                        <a class="header__menu-link" href="#buying">Оформление заказа</a>
+                        <a class="header__menu-link" href="#" data-link="buying">Оформление заказа</a>
                     </li>
                 </ul>
             </nav>
@@ -31,7 +31,7 @@
 </header>
 
 <main class="main">
-    <section id="home" class="intro">
+    <section class="intro" id="home">
         <div class="container">
             <div class="intro__inner">
                 <div class="intro__content">
@@ -45,7 +45,7 @@
                         Постоянное обновление ассортимента
                         Прямые поставки от производителя
                     </p>
-                    <button class="intro__button button button--color-gray">Перейти к покупкам!</button>
+                    <button class="intro__button button button--color-gray" id="main-action-button">Перейти к покупкам!</button>
                 </div>
                 <div class="intro__image-container">
                     <img
@@ -59,90 +59,141 @@
         </div>
     </section>
 
-    <section id="goods" class="skills">
+    <section class="catalog" id="goods">
         <div class="container">
-            <h2 class="skills__logo title">Каталог</h2>
-            <div class="skills__inner">
-                <div class="skills__content">
-                    <div class="skills__content-item skills__content-item-writing">
-                        <div class="writing__image-container">
+            <h2 class="items__logo title">Каталог</h2>
+            <div class="items__inner">
+                <div class="items__content">
+                    <div class="items__content-item items__content-item-item">
+                        <div class="item__image-container">
                             <img
-                                    class="writing__image"
+                                    class="item__image"
                                     src=assets/icons/writing.svg
                                     alt=""
                                     width="293" height="293"
                             >
                         </div>
-                        <h2 class="writing__logo title--mini">Товар 1</h2>
-                        <p class="writing__text text text--color-gray">
+                        <h2 class="item__logo title--mini">Товар 1</h2>
+                        <p class="item__text text text--color-gray">
                             Описание товара 1
                         </p>
-                        <button class="skills__button-writing button button--color-gray">Заказать</button>
+                        <button class="items__button-item button button--color-gray">Заказать</button>
                     </div>
 
-                    <div class="skills__content-item skills__content-item-reading">
-                        <div class="reading__image-container">
+                    <div class="items__content-item items__content-item-item">
+                        <div class="item__image-container">
                             <img
-                                    class="reading__image"
+                                    class="item__image"
                                     src=assets/icons/writing.svg
                                     alt=""
-                                    width="371" height="247"
+                                    width="293" height="293"
                             >
                         </div>
-                        <h2 class="reading__logo title--mini">Товар 2</h2>
-                        <p class="reading__text text text--color-gray">
+                        <h2 class="item__logo title--mini">Товар 2</h2>
+                        <p class="item__text text text--color-gray">
                             Описание товара 2
                         </p>
-                        <button class="skills__button-reading button button--color-gray">Заказать</button>
+                        <button class="items__button-item button button--color-gray">Заказать</button>
                     </div>
-                    <div class="skills__content-item skills__content-item-reading">
-                        <div class="reading__image-container">
+
+                    <div class="items__content-item items__content-item-item">
+                        <div class="item__image-container">
                             <img
-                                    class="reading__image"
+                                    class="item__image"
                                     src=assets/icons/writing.svg
                                     alt=""
-                                    width="371" height="247"
+                                    width="293" height="293"
                             >
                         </div>
-                        <h2 class="reading__logo title--mini">Товар 3</h2>
-                        <p class="reading__text text text--color-gray">
+                        <h2 class="item__logo title--mini">Товар 3</h2>
+                        <p class="item__text text text--color-gray">
                             Описание товара 3
                         </p>
-                        <button class="skills__button-reading button button--color-gray">Заказать</button>
+                        <button class="items__button-item button button--color-gray">Заказать</button>
+                    </div>
+
+                    <div class="items__content-item items__content-item-item">
+                        <div class="item__image-container">
+                            <img
+                                    class="item__image"
+                                    src=assets/icons/writing.svg
+                                    alt=""
+                                    width="293" height="293"
+                            >
+                        </div>
+                        <h2 class="item__logo title--mini">Товар 4</h2>
+                        <p class="item__text text text--color-gray">
+                            Описание товара 4
+                        </p>
+                        <button class="items__button-item button button--color-gray">Заказать</button>
+                    </div>
+
+                    <div class="items__content-item items__content-item-item">
+                        <div class="item__image-container">
+                            <img
+                                    class="item__image"
+                                    src=assets/icons/writing.svg
+                                    alt=""
+                                    width="293" height="293"
+                            >
+                        </div>
+                        <h2 class="item__logo title--mini">Товар 5</h2>
+                        <p class="item__text text text--color-gray">
+                            Описание товара 5
+                        </p>
+                        <button class="items__button-item button button--color-gray">Заказать</button>
+                    </div>
+
+                    <div class="items__content-item items__content-item-item">
+                        <div class="item__image-container">
+                            <img
+                                    class="item__image"
+                                    src=assets/icons/writing.svg
+                                    alt=""
+                                    width="293" height="293"
+                            >
+                        </div>
+                        <h2 class="item__logo title--mini">Товар 6</h2>
+                        <p class="item__text text text--color-gray">
+                            Описание товара 6
+                        </p>
+                        <button class="items__button-item button button--color-gray">Заказать</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="buying" class="contacts">
-        <h2 class="skills__logo title">Оформление заказа</h2>
+    <section class="orders" id="buying">
         <div class="container">
-            <div class="contacts__inner">
-                <div class="contacts__image-container">
+            <h2 class="orders__logo title">Оформление заказа</h2>
+            <div class="orders__inner">
+                <div class="orders__image-container">
                     <img
-                            class="contacts__image"
+                            class="orders__image"
                             src="assets/icons/contact-us.svg"
                             alt=""
                             width="477" height="429"
-
                     >
                 </div>
-                <div class="contacts__content">
-                    <p class="contacts__text text text--color-gray">
-                        Заполните все данные и наш менеджер свяжется с Вами для подтверждения заказа
-                    </p>
-                    <form class="contacts__form">
-                        <label class="contacts__hint" for="order"></label>
-                        <input class="contacts__input" id="order" type="text" placeholder="Ваш заказ">
+                <div class="orders__content">
 
-                        <label class="contacts__hint" for="name"></label>
-                        <input class="contacts__input" id="name" type="text" placeholder="Ваше имя">
+                    <form class="orders__form">
+                        <p class="orders__text text text--color-gray">Заполните все данные и наш менеджер свяжется с Вами для подтверждения заказа</p>
+                        <div class="orders__form-inputs">
+                            <div class="order__form-input">
+                                <input class="orders__input" id="email" type="text" placeholder="Ваш e-mail">
+                            </div>
 
-                        <label class="contacts__hint" for="number"></label>
-                        <input class="contacts__input" id="number" type="text" placeholder="Ваш телефон">
+                            <div class="order__form-input">
+                                <input class="orders__input" id="name" type="text" placeholder="Ваше имя">
+                            </div>
 
-                        <button class="contacts__button button--color-gray">Оформить заказ</button>
+                            <div class="order__form-input">
+                                <input class="orders__input" id="phone" type="text" placeholder="Ваш телефон">
+                            </div>
+                            <button class="orders__button button button--color-gray" type="submit">Оформить заказ</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -165,6 +216,8 @@
         </div>
     </div>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
