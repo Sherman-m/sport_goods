@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS sport_goods.products (
     name TEXT NOT NULL UNIQUE,
     description TEXT,
     category_id INTEGER NOT NULL REFERENCES sport_goods.categories (id),
-    image_link TEXT NOT NULL,
+    image_url TEXT NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     quantity INTEGER NOT NULL
 );
