@@ -51,8 +51,13 @@ components_manager:
             url_trailing_slash: strict-match
 
         handler-v1-orders-post:
-            path: /v1/orders/
+            path: /v1/orders
             method: POST
+            task_processor: main-task-processor
+
+        handler-v1-products-get:
+            path: /v1/products
+            method: GET
             task_processor: main-task-processor
 
         postgres-db-1:

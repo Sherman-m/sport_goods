@@ -19,14 +19,12 @@ struct OrderData {
   std::optional<std::string> phone;
 };
 
-class HandlerV1OrdersV1Post final
-    : public userver::server::handlers::HttpHandlerBase {
+class View final : public userver::server::handlers::HttpHandlerBase {
  public:
   static constexpr std::string_view kName = "handler-v1-orders-post";
 
-  explicit HandlerV1OrdersV1Post(
-      const userver::components::ComponentConfig& config,
-      const userver::components::ComponentContext& context)
+  explicit View(const userver::components::ComponentConfig& config,
+                const userver::components::ComponentContext& context)
       : HttpHandlerBase(config, context),
         pg_cluster_(
             context
@@ -83,7 +81,7 @@ class HandlerV1OrdersV1Post final
 }  // namespace
 
 void AppendView(userver::components::ComponentList& component_list) {
-  component_list.Append<HandlerV1OrdersV1Post>();
+  component_list.Append<View>();
 }
 
 }  // namespace sport_goods::views::v1::orders::post

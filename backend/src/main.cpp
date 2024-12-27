@@ -8,6 +8,7 @@
 #include <userver/utils/daemon_run.hpp>
 
 #include "views/v1/orders/post/view.hpp"
+#include "views/v1/products/get/view.hpp"
 
 int main(int argc, char* argv[]) {
   auto component_list =
@@ -20,6 +21,7 @@ int main(int argc, char* argv[]) {
           .Append<userver::server::handlers::TestsControl>();
 
   sport_goods::views::v1::orders::post::AppendView(component_list);
+  sport_goods::views::v1::products::get::AppendView(component_list);
 
   return userver::utils::DaemonMain(argc, argv, component_list);
 }
