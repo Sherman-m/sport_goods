@@ -1,0 +1,43 @@
+version: "2.3"
+
+services:
+    postgres:
+        container_name: service-postgres
+        image: postgres:12
+        environment: &db_env
+          POSTGRES_DB: sport_goods-db
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+        ports:
+          - 5432
+        volumes:
+          - ./backend/postgresql/schemas:/docker-entrypoint-initdb.d
+          - ./backend/.pgdata:/var/lib/postgresql/data
+        networks:
+          - postgres
+
+    sport_goods-container:
+        container_name: service-sport-goods
+        image: ghcr.io/userver-framework/ubuntu-22.04-userver-pg:latest
+        privileged: true
+        environment:
+          <<: *db_env
+          PREFIX: ${PREFIX:-~/.local}
+          CCACHE_DIR: /sport_goods/.ccache
+          CORES_DIR: /cores
+        volumes:
+          - .:/sport_goods:rw
+          - ${TC_CORES_DIR:-./.cores}:/cores:rw
+        ports:
+          - 8080:8080
+        working_dir: /sport_goods
+        entrypoint:
+          - ./backend/tests/run_as_user.sh
+        depends_on:
+          - postgres
+        networks:
+          - postgres
+
+networks:
+    postgres:
+        driver: bridge
